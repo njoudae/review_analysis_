@@ -22,22 +22,7 @@ The platform collects reviews through **Apify**, analyzes each review independen
 - Display source-backed metrics in an Arabic RTL dashboard with real empty states.
 - Protect the backend with an API key and protect the production dashboard server-side.
 
-## Is this an advanced AI system? Is it RAG or LangGraph?
 
-Yes, this is an **advanced, production-oriented AI application architecture**. It is more than a single model call: it includes relational data modeling, a REST API, a background worker, persisted state transitions, deduplication, retry handling, structured AI results, operational reporting, and a management dashboard.
-
-Its precise technical classification is:
-
-| Technology or pattern | Used? | Details |
-|---|---:|---|
-| OpenAI API | Yes | Uses the official `openai` Python SDK for review analysis. |
-| Structured Outputs | Yes | OpenAI results are parsed into a strict Pydantic schema rather than untrusted free-form text. |
-| RAG | No | There is currently no document knowledge base, embedding pipeline, vector search, or retrieval step. |
-| LangGraph | No | The workflow is implemented with Python services and PostgreSQL-backed states, not an agent graph. |
-| OpenAI Agents SDK | No | The current system does not require agent handoffs or an agent-managed tool loop. |
-| Vector database | No | Operational entities are retrieved directly from PostgreSQL, which is appropriate for this use case. |
-
-Not using RAG or LangGraph is intentional, not a missing feature. This use case is a **deterministic, auditable AI processing pipeline**, not question answering over a document library. RAG would become useful if the platform needed to search policies, training manuals, or a large historical knowledge base. LangGraph or the OpenAI Agents SDK would become useful if the workflow evolved into multiple autonomous agents, tool selection, human approvals, or complex branching decisions.
 
 ## Architecture
 
