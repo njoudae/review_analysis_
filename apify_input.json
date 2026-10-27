@@ -1,0 +1,38 @@
+{
+    "includeWebResults": false,
+    "language": "ar",
+    "locationQuery": "Saudi Arabia, Asir",
+    "maxCrawledPlacesPerSearch": 3,
+    "maxImages": 0,
+    "maxReviews": 20,
+    "maximumLeadsEnrichmentRecords": 0,
+    "reviewsSort": "newest",
+    "reviewsStartDate": "1 days",
+    "scrapeContacts": false,
+    "scrapeDirectories": false,
+    "scrapeImageAuthors": false,
+    "scrapePlaceDetailPage": true,
+    "scrapeReviewsPersonalData": true,
+    "scrapeSocialMediaProfiles": {
+        "facebooks": false,
+        "instagrams": false,
+        "tiktoks": false,
+        "twitters": false,
+        "youtubes": false
+    },
+    "scrapeTableReservationProvider": false,
+    "searchMatching": "only_exact",
+    "skipClosedPlaces": false,
+    "startUrls": [
+        {
+            "url": "https://www.google.com/maps/place/%D9%85%D9%82%D9%87%D9%89+%D9%8A%D8%BA%D9%85%D9%87%E2%80%AD/@18.5455017,41.4761717,10z/data=!4m10!1m2!2m1!1z2YrYutmF2Kk!3m6!1s0x15e4e10022259a0d:0x2e172723af8675e!8m2!3d18.9474926!4d42.1822185!15sCgjZiti62YXYqVoKIgjZiti62YXYqZIBC2NvZmZlZV9zaG9w4AEA!16s%2Fg%2F11v_215rdf?entry=ttu&g_ep=EgoyMDI2MDEwNy4wIKXMDSoASAFQAw%3D%3D"
+        },
+        {
+            "url": "https://www.google.com/maps/place/%D9%8A%D9%8F%D8%BA%D9%85%D9%87%E2%80%AD/@18.5455017,41.4761717,10z/data=!4m10!1m2!2m1!1z2YrYutmF2Kk!3m6!1s0x15e485c53d08d5cd:0x7fa27cfa5f9a6164!8m2!3d18.5455017!4d42.0364744!15sCgjZiti62YXYqVoKIgjZiti62YXYqZIBBGNhZmXgAQA!16s%2Fg%2F11tg1_767v?entry=ttu&g_ep=EgoyMDI2MDEwNy4wIKXMDSoASAFQAw%3D%3D"
+        },
+        {
+            "url": "https://www.google.com/maps/place/%D9%8A%D9%8F%D8%BA%D9%85%D9%87%E2%80%AD/@18.3354262,42.2053183,10z/data=!4m10!1m2!2m1!1z2YrYutmF2Kk!3m6!1s0x15fb5b0005fe81e5:0x5bd688028b85f04c!8m2!3d18.3354262!4d42.765621!15sCgjZiti62YXYqVoKIgjZiti62YXYqZIBBGNhZmXgAQA!16s%2Fg%2F11w8ths3tz?entry=ttu&g_ep=EgoyMDI2MDEwNy4wIKXMDSoASAFQAw%3D%3D"
+        }
+    ],
+    "website": "allPlaces"
+}

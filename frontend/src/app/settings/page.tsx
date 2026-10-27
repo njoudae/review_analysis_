@@ -1,0 +1,13 @@
+import { createOrganization } from "@/app/actions";
+import { PageHeader } from "@/components/page-header";
+import { Badge } from "@/components/ui/badge";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
+import { backendFetch } from "@/lib/api";
+import type { Organization } from "@/lib/types";
+
+export default async function SettingsPage() {
+  const organizations = await backendFetch<Organization[]>("/organizations");
+  return <><PageHeader title="إعدادات المؤسسة" description="إعداد النشاط واللغة والمنطقة الزمنية" /><div className="split-grid"><Card><CardHeader><CardTitle>إضافة مؤسسة</CardTitle></CardHeader><CardContent><form action={createOrganization} className="form-grid"><div className="field full"><label htmlFor="name">اسم المؤسسة</label><input className="input" id="name" name="name" required /></div><div className="field"><label htmlFor="business_type">نوع النشاط</label><select className="select" id="business_type" name="business_type" required><option value="cafe">مقهى</option><option value="restaurant">مطعم</option><option value="company">شركة</option><option value="school">مدرسة</option><option value="retail">تجزئة</option><option value="other">أخرى</option></select></div><div className="field"><label htmlFor="industry">القطاع</label><input className="input" id="industry" name="industry" /></div><div className="field"><label htmlFor="city">المدينة</label><input className="input" id="city" name="city" required /></div><div className="field"><label htmlFor="timezone">المنطقة الزمنية</label><input className="input" id="timezone" name="timezone" defaultValue="Asia/Riyadh" required /></div><div className="form-actions"><button className="button button-primary">حفظ المؤسسة</button></div></form></CardContent></Card><Card><CardHeader><CardTitle>المؤسسات</CardTitle><Badge tone="info">{organizations.length}</Badge></CardHeader><CardContent>{organizations.length ? <Table><TableHeader><TableRow><TableHead>المؤسسة</TableHead><TableHead>النشاط</TableHead><TableHead>المدينة</TableHead><TableHead>المنطقة الزمنية</TableHead></TableRow></TableHeader><TableBody>{organizations.map((organization) => <TableRow key={organization.id}><TableCell className="cell-title">{organization.name}</TableCell><TableCell>{organization.business_type}</TableCell><TableCell>{organization.city}</TableCell><TableCell>{organization.timezone}</TableCell></TableRow>)}</TableBody></Table> : <p className="cell-muted">لم تتم إضافة مؤسسة بعد.</p>}</CardContent></Card></div></>;
+}
+
